@@ -20,6 +20,26 @@ When the data is predominantly served by the backend, with little to no logic on
 
 */
 
+export interface ITodo {
+  id: TodoId
+  title: string
+  isChecked: boolean
+  children?: ITodo[]
+}
+
+export type TodoId = string & { todoId: 'todoId' }
+export function getTodoDetails(id: TodoId) { }
+const todoItem = {
+    id: '',
+    title: 'heya',
+    isChecked: false,
+    
+} as ITodo
+
+getTodoDetails('')
+getTodoDetails(todoItem.id)
+
+
 
 export class Thing {
   constructor(id: string, name: string, type: string, parentId: string, children: Thing[]) {}

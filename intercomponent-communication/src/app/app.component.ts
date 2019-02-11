@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges, AfterViewInit, EventEmitter, ViewChild } from '@angular/core'
+import { Component, OnChanges, OnInit, SimpleChanges, AfterViewInit, EventEmitter, ViewChild, ChangeDetectionStrategy } from '@angular/core'
 import { Observable, Subject } from 'rxjs'
 import { ChildComponent } from './child/child.component';
 
