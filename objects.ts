@@ -1,3 +1,26 @@
+
+/*
+Introduction
+
+Classes vs. Interfaces
+
+-> Classes are mainly used when you have to create new instances. Consider a simple todo app; a `new Todo()` would make sense, but if data mainly lives in the
+Backend and is not really created from the Frontend, using classes is too much overkill. Using an interface to describe the contract and simply assigning the incoming object
+to this interface is enough.
+
+Now in RESTful environments, there's an interplay between the domain in both front- and backend. The assumed `body` in POST calls for creation or updating is useful as classes.
+The backend returns, basically the "objects" you will GET, are best off as Interfaces.
+
+The complex situations start when you want to mix and match these two.
+
+So when do you use a class and when do you use an interface?
+
+When the data is predominantly served by the backend, with little to no logic on the domain object itself; interfaces rule.
+
+
+*/
+
+
 export class Thing {
   constructor(id: string, name: string, type: string, parentId: string, children: Thing[]) {}
 }
@@ -125,7 +148,7 @@ export interface Transaction {
   accounts: { from: Account, to: Account },
   details: TransactionDetails,
   date: Date,
-  status: number // 0, 1, 2 ? 
+  status: number // 0, 1, 2 ?
 }
 
 export interface TransactionDetails {
