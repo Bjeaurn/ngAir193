@@ -34,6 +34,10 @@ export class AppComponent implements OnInit {
     this.viewChild.thing.asObservable().subscribe(
       a => { console.log('viewChild subscription', a)} // Works!
     )
+
+    this.viewChild.getThing().subscribe(
+      a => { console.log('getThing through ViewChild subscription', a)} // Works too!
+    )
   }
 
   handle(e: any) {

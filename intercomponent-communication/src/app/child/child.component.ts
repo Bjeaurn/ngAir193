@@ -16,6 +16,10 @@ export class ChildComponent implements OnInit {
     this.delay = 5000
   }
 
+  getThing() {
+    return this.thing.asObservable()
+  }
+
   ngOnInit() {
     this.thing.emit('delay: ' + this.delay)
     interval(this.delay).pipe(
