@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "reveal-md presentation.md"
+    "start": "reveal-md presentations/"
   },
   "repository": {
     "type": "git",
