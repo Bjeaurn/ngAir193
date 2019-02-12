@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "reveal-md presentations/"
+    "start": "reveal-md presentations/ --theme presentations/my-theme.css --highlight-theme atom-one-dark"
   },
   "repository": {
     "type": "git",

@@ -7,6 +7,8 @@
 - Classes are used when you expect the app to generate instances.<!-- .element: class="fragment" -->
 - Interfaces work best when they are served from an external source.<!-- .element: class="fragment" -->
 
+Note: Introduction that in the past (anecdotal) seen a lot of use of classes to define data models in the frontend, as people are used to doing it in the backend.
+
 ---
 
 ```
