@@ -167,7 +167,7 @@ export interface ITodo {
 @Injectable()
 export class TodoService {
     getTodoList(): Observable<ITodo[]> {
-        return this.http.get<ITodo>(url)
+        return this.http.get<ITodo[]>(url)
     }
 }
 ```

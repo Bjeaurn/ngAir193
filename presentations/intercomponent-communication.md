@@ -1,5 +1,7 @@
 # Intercomponent communication
 
+Note: Next slide is Input/Output, so introduce with "How components communicate between eachothers, using the usual suspects: *click*"
+
 ---
 
 - `@Input()` 
