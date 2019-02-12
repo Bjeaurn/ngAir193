@@ -22,7 +22,7 @@ Note: Intercomponent communication is used a lot when you are trying to split "p
 
 ### What's wrong with `@Input()` and `@Output()`?
 
-Note: Well, nothing wrong there. But there may be cases where you want it a bit differently. Especially `@Output()` has its limitations.
+Note: Well, nothing wrong there. But there may be cases where you want it a bit differently. Especially `@Output()` has its limitations. We'll get to that.
 
 ---
 
@@ -117,7 +117,7 @@ ngOnInit() {
 The power of Rx! ✅<!-- .element: class="fragment" -->
 
 
-Note: Pros, still no changes on the simple component, output functions as expected. Your HTML is less cluttered, there's no internal (additional!) Subjects or EventEmitters that expose their API. Cons; the HTML is less "readable", as its intention isn't clearly and explicitly defined. You directly expose the EventEmitter (Subject) from the ChildComponent, which would seem like bad practice to me.
+Note: Pros, still no changes on the simple component, output functions as expected. Your HTML is less cluttered, there's no internal (additional!) Subjects or EventEmitters that expose their API. Cons; the HTML is less "readable" and not as explicit. One might read this and think; there's no output? It's intention isn't clearly and explicitly defined. You directly expose the EventEmitter (Subject) from the ChildComponent, which would seem like bad practice to me.
 
 ---
 
@@ -156,7 +156,7 @@ Note: Pros, not necessarily exposing the raw EventEmitter or Subject, @Output() 
 - @Input / @Output are excellent solutions.<!-- .element: class="fragment" -->
 - Services are fine, but be conscious about your dependencies.<!-- .element: class="fragment" -->
 - In case you want to use the power of RxJS, you may have to look for alternatives.<!-- .element: class="fragment" -->
-- There's multiple ways to achieve what you want, but none of them really is "the prettiest".<!-- .element: class="fragment" -->
+- There's multiple ways to achieve what you want, but they all have their downsides and might feel a bit cheaty.<!-- .element: class="fragment" -->
 
 ---
 

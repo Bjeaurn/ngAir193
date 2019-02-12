@@ -71,7 +71,7 @@ export class TodoListComponent {
 
 - Perfect type completion.<!-- .element: class="fragment" -->
 - Good idea to try and keep only 1 domain entity instead of multiple.<!-- .element: class="fragment" -->
-- Objects are recognizable<!-- .element: class="fragment" --> `console.log(todoItem) -> Todo { .. }`<!-- .element: class="fragment" -->
+- Objects are recognizable runtime<!-- .element: class="fragment" --> `console.log(todoItem) -> Todo { .. }`<!-- .element: class="fragment" -->
 - Compile errors!<!-- .element: class="fragment" -->
 
 Note: Yes, compile errors are a good thing. It's the compiler alerting you to actual faults in your code.
@@ -144,7 +144,7 @@ export class TodoService {
 
 - Useful when the data is external (like from an API).<!-- .element: class="fragment" -->
 - No painful compile errors when the "contract" changes.<!-- .element: class="fragment" -->
-- Much more easy to "compose" with.<!-- .element: class="fragment" -->
+- Easier to compose complex objects with<!-- .element: class="fragment" -->
 
 This makes the objects you use in your app more manageable and extendable. ✌️<!-- .element: class="fragment" -->
 
@@ -158,7 +158,7 @@ export interface ITodo {
     id: string // or a number! If this changes, it doesn't hurt as much.
     title: string
     isChecked: boolean
-    children?: Todo[]
+    children?: ITodo[]
 }
 ```
 <!-- .element: class="fragment" -->
@@ -183,7 +183,7 @@ export class TodoService {
 ![Type competion with Interfaces!](assets/typecompletion.png)
 <!-- .element: class="fragment" -->
 
-Note: So these are the pros of doing it this way. Cons are in the form of no runtime, name clashing with probably classes for creation and it's more difficult to implement domain specific logic in one spot.
+Note: So these are the pros of doing it this way. Cons are in the form of no runtime, name clashing with  classes for creation and it's more difficult to implement domain specific logic in one spot. If TypeScript could be a bit more help here, this would be so powerful to use... (class implements interface, gives you the assignments for free.)
 
 ---
 
@@ -246,7 +246,7 @@ Note: You are now casting your external data to type specific ID's. You can writ
 
 ![In action in VSCode](assets/typesafety.png)
 
-Note: You see the raw empty string breaks, but the one we inferred from our created object works fine.
+Note: You see the raw empty string breaks, but the one we inferred from our created object works fine. **This is a powerful slide, make sure we go through this one completely.**
 
 ---
 
