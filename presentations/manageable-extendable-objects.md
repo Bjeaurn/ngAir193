@@ -92,7 +92,7 @@ Note: Compile errors also will happen in for example your testdata or tests, whi
 ## So classes are terrible!
 
 - No. They're useful, but don't abuse them.<!-- .element: class="fragment" -->
-- They're perfect for limited and specifcally scoped pieces of code<!-- .element: class="fragment" -->
+- They're perfect for limited and specifically scoped pieces of code<!-- .element: class="fragment" -->
 - Like, the creation of an object that is the minimum requirement to create a Todo.<!-- .element: class="fragment" -->
 - In simple use cases, the service that POSTs could create the object.<!-- .element: class="fragment" -->
 
@@ -269,7 +269,7 @@ export type NewTodo = Pick<Todo, 'title' | 'isChecked'>
 
 ```
 const n: NewTodo = {
-    title: '' as TodoId, // Else it gives us an error!
+    title: '' as TodoId, // Else it gives us an error, cause string !== TodoId!
     isChecked: false // Still is optional!
 }
 ```
