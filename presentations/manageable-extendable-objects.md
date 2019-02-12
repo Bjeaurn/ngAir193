@@ -250,11 +250,49 @@ Note: You see the raw empty string breaks, but the one we inferred from our crea
 
 ---
 
+### You can even swap out classes for types
+
+```
+export type TodoId = string & { todoId: 'todoId' }
+export interface Todo {
+    id: TodoId
+    title: string
+    isChecked?: boolean
+}
+```
+<!-- .element: class="fragment" -->
+
+```
+export type NewTodo = Pick<Todo, 'title' | 'isChecked'>
+```
+<!-- .element: class="fragment" -->
+
+```
+const n: NewTodo = {
+    title: '' as TodoId, // Else it gives us an error!
+    isChecked: false // Still is optional!
+}
+```
+<!-- .element: class="fragment" -->
+
+Note: I'm still exploring these avenues as better ways to structure and manage your data models, learning new things every day. Still figuring out what works well for my situation and what might hurt in the future.
+
+---
+
+More examples in the github repo under `experiments.ts`
+
+Note: github.com/bjeaurn/ngAir193
+
+---
+
 ## Conclusion
 
 - Classes are good when used for a very specific scope.<!-- .element: class="fragment" -->
 - Interfaces rule for any external data.<!-- .element: class="fragment" -->
 - Be type safe!<!-- .element: class="fragment" -->
+- Consider using additional typescript options.<!-- .element: class="fragment" -->
+
+Note: No reason not to be typesafe in the frontend. Let the compiler help you, without making it too hard on yourself.
 
 ---
 
